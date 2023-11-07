@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Máy tính cơm 5000</title>
+    </header>
+    <body>
+        <h1>Máy tính cơm 5000</h1>
+        <p>
+            <label for="todayRice">Lượng cơm chuẩn</label>
+            <input type="text" id="todayRice"/>
+        </p>
+        <p>
+            <label for="todayYam">Lượng khoai chuẩn</label>
+            <input type="text" id="todayYam"/>
+        </p>
+        <p>
+            <label for="actualYam">Lượng khoai thực</label>
+            <input type="text" id="actualYam"/>
+        </p>
+        <button type="button" onclick="calculate()">Tính lượng cơm thực</button>
+        <h3>Cơm thực: <span id="actualRice"></span></h3>
+    </body>
+    <script>
+        function calculate() {
+            let todayRice = Number(document.getElementById('todayRice').value);
+            let todayYam = Number(document.getElementById('todayYam').value);
+            let actualYam = Number(document.getElementById('actualYam').value);
+            document.getElementById('actualRice').innerHTML = todayRice + (todayYam - actualYam) / 11 * 9;
+        }
+    </script>
+</html>
